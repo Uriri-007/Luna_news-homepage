@@ -1,0 +1,260 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--luna-ft-fam);
+}
+
+:root{
+    --luna-gray: #807f7f;
+    --luna-white: #fff;
+    --luna-dk-blue: rgb(1, 0, 12);
+    --luna-red: #d30707bd;
+    --luna-coffee: #d6a03a;
+    --huge-span-fsz: clamp(20px, calc(2vw + 12px), 38px);
+    --luna-avg-fsz: 1rem;
+    --luna-sm-fsz: 14px;
+    --luna-ft-fam: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: white;
+    padding: 3rem;
+}
+
+.container{
+    display: grid;
+    grid-template: repeat(8, 100px) / repeat(8, 1fr);
+    row-gap: 3rem;
+    padding: 2rem;
+    box-shadow: 3px 3px 5px 3px var(--luna-gray), -3px -3px 5px 3px var(--luna-gray);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    grid-area: 1 / 1 / 2 / 9;
+    align-items: flex-end;
+}
+
+nav>img {
+    max-height: 50%;
+}
+
+nav>div {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--luna-gray);
+    font-size: var(--luna-avg-fsz);
+}
+
+.content-body {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-area: 2 / 1 / 7 / 9;
+}
+
+.news {
+    grid-area: 7 / 1 / 9 / 9;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.huge-text {
+    font-size: var(--huge-span-fsz);
+    font-weight: 900;
+    width: 30%;
+}
+
+.content-body>div {
+    height: 100%;
+}
+
+.left-container {
+    grid-area: 1 / 1 / 2 / 4;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.child{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    height: 40%;
+}
+
+.child p{
+    color: var(--luna-gray);
+    font-size: var(--luna-avg-fsz);
+    line-height: 3ch;
+    word-spacing: 0.6ch;
+    font-size: var(--luna-sm-fsz);
+}
+
+.read-more {
+    background-color: var(--luna-red);
+    padding: 10px 15px;
+    border: none;
+    font-weight: bold;
+    font-size: 11px;
+    letter-spacing: 3px;
+    width: 10rem;
+    height: 4rem;
+}
+
+.huge-text+div {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.huge-text, .huge-text+div {
+    height: 100%;
+}
+
+.img-web3 {
+    width: 100%;
+    height: 50%;
+}
+
+.right-container {
+    background: var(--luna-dk-blue);
+    grid-area: 1 / 4 / 2 / 6;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: space-around;
+}
+
+.right-container h2{
+    font-weight: bold;
+    color: var(--luna-coffee);
+}
+
+.right-container h3{
+    color: var(--luna-white);
+    font-size: var(--luna-avg-fsz);
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.right-container p{
+    color: var(--luna-gray);
+    font-size: var(--luna-sm-fsz);
+}
+
+hr {
+    border-color: var(--luna-gray);
+    margin: 1rem 0;
+}
+
+.news-list {
+    max-width: 30%;
+    display: flex;
+    gap: 8px;
+    max-height: 140px;
+}
+
+.news-list>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-list>img {
+    max-height: 100%;
+    max-width: 150px;
+}
+
+.news-list h2 {
+     font-weight: 900;
+     color: var(--luna-red);
+}
+
+.news-list h3 {
+    font-size: var(--luna-avg-fsz);
+    font-weight: 900;
+}
+
+.news-list p {
+    font-size: var(--luna-sm-fsz);
+    color: var(--luna-gray);
+    line-height: 3ch;
+}
+
+
+
+
+
+
+/* Media Queries Setup for adequate responsiveness */
+
+@media screen and (min-width: 1260px) {
+    .container {
+        grid-template: repeat(8, 80px) / repeat(8, 1fr);
+    }
+}
+
+
+
+
+@media screen and (max-width: 720px) {
+    body {
+    background-color: white;
+    padding: 1rem 0.5rem;
+}
+
+.container{
+   display: flex;
+   flex-direction: column;
+   box-shadow: none;
+   padding: 0;
+}
+
+nav>div {
+    display: none;
+}
+
+.content-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.child {
+    flex-direction: column;
+    height: auto;
+}
+
+.huge-text, .huge-text+div {
+    width: 100%;
+}
+
+.content-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.content-body>div {
+    height: auto;
+}
+
+.news {
+    flex-direction: column;
+}
+
+.news-list {
+    max-width: 100%;
+    height: auto;
+}
+}
