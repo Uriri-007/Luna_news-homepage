@@ -43,13 +43,16 @@ nav{
     border: 1px solid #000;
 }
 
-#nav-links {
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
+.open-menu, .close-menu {
+    display: none;
 }
 
-.nav-links>a {
+#nav-links {
+    display: flex;
+    gap: 8px;
+}
+
+#nav-links>a {
     text-decoration: none;
     color: var(--luna-gray);
     font-size: var(--luna-avg-fsz);
@@ -191,7 +194,6 @@ hr {
 .news-list p {
     font-size: var(--luna-sm-fsz);
     color: var(--luna-gray);
-    line-height: 3ch;
 }
 
 
@@ -210,7 +212,7 @@ hr {
 
 
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 720px) {
     body {
     background-color: white;
     padding: 1rem 1rem;
@@ -228,15 +230,14 @@ nav {
     position: relative;
 }
 
+.open-menu {
+    display: block;
+}
+
 .close-menu {
    position: absolute;
    right: 0;
    z-index: 2;
-}
- 
-.hidden {
-    display: none;
-    visibility: hi;
 }
 
 #nav-links {
