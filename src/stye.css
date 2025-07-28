@@ -5,6 +5,11 @@
     font-family: var(--luna-ft-fam);
 }
 
+@font-face {
+    font-family: luna;
+    src: url(./assets/fonts/Inter-VariableFont_slnt,wght.ttf);
+}
+
 :root{
     --luna-gray: #807f7f;
     --luna-white: #fff;
@@ -14,7 +19,7 @@
     --huge-span-fsz: clamp(20px, calc(2vw + 12px), 38px);
     --luna-avg-fsz: 1rem;
     --luna-sm-fsz: 14px;
-    --luna-ft-fam: Arial, Helvetica, sans-serif;
+    --luna-ft-fam: "luna", Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -35,19 +40,16 @@ nav{
     justify-content: space-between;
     grid-area: 1 / 1 / 2 / 9;
     align-items: flex-end;
+    border: 1px solid #000;
 }
 
-nav>img {
-    max-height: 50%;
-}
-
-nav>div {
+#nav-links {
     width: 50%;
     display: flex;
     justify-content: space-between;
 }
 
-nav a {
+.nav-links>a {
     text-decoration: none;
     color: var(--luna-gray);
     font-size: var(--luna-avg-fsz);
@@ -101,10 +103,10 @@ nav a {
 
 .read-more {
     background-color: var(--luna-red);
-    padding: 10px 15px;
+    padding: 10px;
     border: none;
     font-weight: bold;
-    font-size: 11px;
+    font-size: var(--luna-sm-fsz);
     letter-spacing: 3px;
     width: 10rem;
     height: 4rem;
@@ -208,10 +210,10 @@ hr {
 
 
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 640px) {
     body {
     background-color: white;
-    padding: 1rem 0.5rem;
+    padding: 1rem 1rem;
 }
 
 .container{
@@ -219,9 +221,25 @@ hr {
    flex-direction: column;
    box-shadow: none;
    padding: 0;
+   row-gap: 2rem;
 }
 
-nav>div {
+nav {
+    position: relative;
+}
+
+.close-menu {
+   position: absolute;
+   right: 0;
+   z-index: 2;
+}
+ 
+.hidden {
+    display: none;
+    visibility: hi;
+}
+
+#nav-links {
     display: none;
 }
 
@@ -233,6 +251,12 @@ nav>div {
 .child {
     flex-direction: column;
     height: auto;
+    gap: 1rem;
+}
+
+.left-container {
+    gap: 1rem;
+    padding: 0;
 }
 
 .huge-text, .huge-text+div {
@@ -242,11 +266,16 @@ nav>div {
 .content-body {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 2rem;
 }
 
 .content-body>div {
     height: auto;
+}
+
+.read-more {
+    width: 8rem;
+    height: 3rem;
 }
 
 .news {
