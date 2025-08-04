@@ -1,5 +1,4 @@
 import "./stye.css";
-import "./responsive.css";
 import mobileWeb3Img from "./assets/images/image-web-3-mobile.jpg";
 
 const Domaccess = (() => {
